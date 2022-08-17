@@ -5,6 +5,13 @@
 	</head>
 	<body>
 		<h1>web view popup test</h1>
+		<button id="btnEnd">팝업종료</button>
 	</body>
+	<script>
+		btnEnd.onclick = function() {
+			const ab = window.AndroidBridge;
+			if(ab) ab.message("REQUEST_END");
+		}
+	</script>
 </html>
 
