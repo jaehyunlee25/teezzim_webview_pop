@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>TeeZZim</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control"  content="No-Cache">
+    <meta http-equiv="Pragma" content="No-Cache">
+    <meta http-equiv="Expires" content="-1">
+    <link rel="stylesheet" type="text/css" href="./../../css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./../../css/layout.css" media="all">    
+	<link rel="stylesheet" type="text/css" href="./../../css/app.css" media="all">
+    <script src="./../../js/libs/jquery.min.js"></script>
+    <script src="./../../js/libs/librarys.min.js"></script> 
+    <script src="./../../js/ui/ui.common.js"></script>
+    <script>
+        
+var ui = {
+    init : function(){
+        if ($('.tab-nav').length){this.tab.init();} // ##Tab
+    },
+    /*
+        기능정의: ##Tab
+        연결방식: aria-controls="" / id=""
+        참고경로: modules/modules_tab.html
+        참고메뉴: 대메뉴 > 중메뉴 > 소메뉴 > 화면명
+    */
+    tab: {
+        eleButton: '.tab-nav a',
+        eleContent: '.tab-content',
+        init: function(){
+            this.event();
+        },
+        event: function(){
+            var _this = this;
+            $(this.eleButton).not('.is-clicked').on('click', function(){
+                _this.action($(this).attr('aria-controls')); return false;
+            }).attr('.is-clicked');
+        },
+        action: function(id){
+            $(this.eleButton+'[href="#'+id+'"]').attr({'aria-selected':'true'}).parent().addClass('is-selected').siblings().removeClass('is-selected').children().attr({'aria-selected':'false'});
+            $('#'+id).attr({'aria-hidden':'false'}).removeAttr('hidden').siblings().attr({'aria-hidden': 'true'}).attr('hidden', 'hidden');
+        },
+    },
+}
+    </script>
+</head>
+<body>
+<!-- Wrap -->
+<div id="app" class="wrap">
+    <!-- Header -->
+    <div id="header">
+		<button type="button" class="btn-history-back"><span class="offscreen">이전</span></button>
+		<h1 class="headline">백업</h1>		
+	</div>
+    <!-- //Header --> 
+	<!-- Container -->
+	<div id="container" class="">
+        <section class="section-filter">
+            <div class="rollsheet-wrap">
+                <div class="rollsheet-container">
+                    <div class="rollsheet">
+                        <div class="allim_reservation">
+                            <h1 class="head-headline text-primary">실시간 예약</h1>
+                            <div class="allimg_icon">
+                                <span class="allim_num">1</span>
+                            </div>
+                        </div>
+                        <p class="text-sub">더플레이어스GC</p>
+                        <!-- <div class="handle"></div>             -->
+                    </div>
+                </div> 
+            </div>   
+            <!-- 필터 -->        
+            <div class="filter-wrap">
+                <div class="filter-container">
+                    <div class="title-group">
+                        <h1 class="filter-title"><time datetime="2022-04">2022년 4월</time></h1>
+                        <div class="date_area">
+                            <button type="button" class="btn-mon-prev" disabled><span class="offscreen">이전달</span></button>
+                            <button type="button" class="btn-mon-next"><span class="offscreen">다음달</span></button>
+                        </div>                    
+                        <div class="tab-nav tab-basic">
+                            <ul role="tablist">
+                                <li role="none" class="is-selected">
+                                    <a href="#tabContent01" id="tabNav01" role="tab" aria-controls="tabContent01" aria-selected="false"><span>달력</span></a>
+                                </li>
+                                <li role="none">
+                                    <a href="#tabContent02" id="tabNav02" role="tab" aria-controls="tabContent02" aria-selected="true"><span>필터</span></a>
+                                </li>
+                            </ul>
+                        </div>  
+                    </div>
+                    <div class="filter-content">
+                        <!-- 달력 -->
+                        <div id="tabContent01" class="tab-content" role="tabpanel" aria-labelledby="tabNav01" aria-hidden="false">
+                            <div class="calendar">
+                                <div class="day-of-week">
+                                    <div>S</div>
+                                    <div>M</div>
+                                    <div>T</div>
+                                    <div>W</div>
+                                    <div>T</div>
+                                    <div>F</div>
+                                    <div>S</div>
+                                </div>
+                                <div class="date-grid">
+                                    <button class="sunday prev-mon">
+                                        <time datetime="2022-03-27">27</time>
+                                        <p class="number"><strong></strong></p>
+                                    </button>
+                                    <button class="today">
+                                        <time datetime="2022-03-28" class="prev-mon">28</time>
+                                        <p class="number"><strong>336</strong>T</p>
+                                    </button>
+                                    <button>
+                                        <time datetime="2022-03-29">29</time>
+                                        <p class="number"><strong>336</strong>T</p>
+                                    </button>
+                                    <button>
+                                        <time datetime="2022-03-30">30</time>
+                                        <p class="number"><strong>336</strong>T</p>
+                                    </button>
+                                    <button>
+                                        <time datetime="2022-03-31">31</time>
+                                        <p class="number"><strong>336</strong>T</p>
+                                    </button>
+                                    <button>
+                                        <time datetime="2022-04-01">4/1</time>
+                                        <p class="number"><strong>336</strong>T</p>
+                                    </button>
+                                    <button>
+                                        <time datetime="2022-04-02">2</time>
+                                        <p class="number"><strong>336</strong>T</p>
+                                    </button>   
+                                    <button class="sunday">
+                                        <time datetime="2022-04-03">3</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button>
+                                    <button>
+                                        <time datetime="2022-04-04">4</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-05">5</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-06">6</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-07">7</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-08">8</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-09">9</time>
+                                        <p class="number"><strong>320</strong>T</p>
+                                    </button> 
+                                    <button class="sunday">
+                                        <time datetime="2022-04-10">10</time>
+                                        <p class="number"><strong>4</strong>T</p>
+                                    </button>   
+                                    <button>
+                                        <time datetime="2022-04-11">11</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button>   
+                                    <button class="selected">
+                                        <time datetime="2022-04-12">12</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button>   
+                                    <button>
+                                        <time datetime="2022-04-13">13</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-14">14</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-15">15</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-16">16</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button>  
+                                    <button class="sunday">
+                                        <time datetime="2022-04-17">17</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>   
+                                    <button>
+                                        <time datetime="2022-04-18">18</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>   
+                                    <button>
+                                        <time datetime="2022-04-19">19</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>   
+                                    <button>
+                                        <time datetime="2022-04-20">20</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-21">21</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-22">22</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>  
+                                    <button>
+                                        <time datetime="2022-04-23">23</time>
+                                        <p class="number"><strong>146</strong>T</p>
+                                    </button>  
+                                    <button class="sunday">
+                                        <time datetime="2022-04-24">24</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-25">25</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-26">26</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-27">27</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-28">28</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-29">29</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                    <button>
+                                        <time datetime="2022-04-24">30</time>
+                                        <p class="number"><strong>316</strong>T</p>
+                                    </button> 
+                                </div>
+                            </div>                            
+                        </div>
+                        <!-- //달력 -->
+                        <!-- 필터 -->
+                        <div id="tabContent02" class="tab-content" role="tabpanel" aria-labelledby="tabNav02" aria-hidden="true" hidden>
+                            <!-- 표시 지역 -->
+                            <div class="form type-row">
+                                <div class="title-group">
+                                    <h2 class="text-main">표시 지역</h2>  
+                                    <div class="switch"> 
+                                        <input type="checkbox" name="sSwitch2" id="sSwitch21" value="" disabled> 
+                                        <label class="onoff-switch" for="sSwitch21"><span class="offscreen"></span></label> 
+                                    </div>              
+                                </div>
+                                <div class="form-content">
+                                    <div class="col-group col-3 space">
+                                        <div class="check-box round">
+                                            <input type="checkbox" name="sCheck11" id="sCheck11" value="" checked disabled />
+                                            <label for="sCheck11"><span>수도권</span></label>
+                                        </div>
+                                        <div class="check-box round">
+                                            <input type="checkbox" name="sCheck12" id="sCheck12" value="" checked disabled />
+                                            <label for="sCheck12"><span>강원도</span></label>
+                                        </div>
+                                        <div class="check-box round">
+                                            <input type="checkbox" name="sCheck13" id="sCheck13" value="" disabled />
+                                            <label for="sCheck13"><span>충청도</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-group col-3 space mt-10">   
+                                        <div class="check-box round">
+                                            <input type="checkbox" name="sCheck14" id="sCheck14" value="" checked disabled />
+                                            <label for="sCheck14"><span>영남권</span></label>
+                                        </div>
+                                        <div class="check-box round">
+                                            <input type="checkbox" name="sCheck15" id="sCheck15" value="" disabled />
+                                            <label for="sCheck15"><span>호남권</span></label>
+                                        </div>
+                                        <div class="check-box round">
+                                            <input type="checkbox" name="sCheck16" id="sCheck16" value="" disabled />
+                                            <label for="sCheck16"><span>제주도</span></label>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <!-- //표시 지역 -->
+                            <!-- 시간대 -->
+                            <div class="form type-row">  
+                                <div class="title-group">
+                                    <h2 class="text-main">시간대</h2>
+                                    <div class="switch"> 
+                                        <input type="checkbox" name="sSwitch2" id="sSwitch22" value="" disabled /> 
+                                        <label class="onoff-switch" for="sSwitch22"><span class="offscreen"></span></label> 
+                                    </div>                          
+                                </div>
+                                <div class="form-content">
+                                    <ul class="option-group-list col-group col-5 space">
+                                        <li>
+                                            <div class="check-box round row">
+                                                <input type="checkbox" name="sCheck21" id="sCheck21" value="" checked disabled />
+                                                <label for="sCheck21" class="time"><span class="text-r">오전 5시<br> ~ 7시</span></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box round row">
+                                                <input type="checkbox" name="sCheck22" id="sCheck22" value="" checked disabled />
+                                                <label for="sCheck22" class="time"><span class="text-r">오전 5시<br> ~ 7시</span></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box round row">
+                                                <input type="checkbox" name="sCheck23" id="sCheck23" value="" checked disabled />
+                                                <label for="sCheck23" class="time"><span class="text-r">오전 5시<br> ~ 7시</span></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box round row">
+                                                <input type="checkbox" name="sCheck24" id="sCheck24" value="" checked disabled />
+                                                <label for="sCheck24" class="time"><span class="text-r">오전 5시<br> ~ 7시</span></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box round row">
+                                                <input type="checkbox" name="sCheck25" id="sCheck25" value="" checked disabled />
+                                                <label for="sCheck25" class="time"><span class="text-r">오전 5시<br> ~ 7시</span></label>
+                                            </div>
+                                        </li>                                                                                               
+                                    </ul> 
+                                </div>   
+                            </div>   
+                            <!-- //시간대 -->                             
+                        </div>  
+                    </div>                   
+                </div>
+            </div> 
+            <!-- //필터 --> 
+            
+            <!--list_AreaTop -->
+              <div class="list_AreaTop">
+                <span>선택한 골프장:<b>5</b></span>
+                <span class="fr">골프장 수:<b>40</b></span>
+              </div>
+              <!--//list_AreaTop -->
+
+            <!--SecArea 지역선택-->
+              <div class="SecArea SecArea_check">
+                <section class="nav_scroll_wrap">
+                  <ul class="tablist">
+                    <li class="nav_item"><a href=""><span class="nav_item_txt">수도권</span><span class="num">8</span></a></li>
+                    <li class="nav_item"><a href=""><span class="nav_item_txt">충청도</span><span class="num">8</span></a></li>
+                    <li class="nav_item"><a href=""><span class="nav_item_txt">강원도</span><span class="num">1</span></a></li>
+                    <li class="nav_item"><a href=""><span class="nav_item_txt">영남권</span><span class="num">1</span></a></li>
+                    <li class="nav_item"><a href=""><span class="nav_item_txt">호남권</span></a></li>
+                  </ul>
+                </section>
+              </div>        
+              <!--//SecArea 지역선택 -->
+
+              <!--SecArea 지역선택-->
+              <div class="area_check">
+                <section class="nav_scroll_wrap">
+                  <ul class="area_tablist">
+                    <li>
+                        <div class='checkbg'>
+                            <div  class="area_bg cap01">이미지</div>
+                            <div class="check-box round">
+                                <input type = 'checkbox' id = 'ck1' name='cks' value = '1' onClick='change();'  checked/>
+                                <label for=""></label>
+                            </div>
+                            <div class="area_info">
+                                <span>남춘천<br>CC</span>
+                                <span class="open_date">4일 오픈</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='checkbg'>
+                            <div  class="area_bg cap02">이미지</div>
+                            <div class="check-box round">
+                                <input type = 'checkbox' id = 'ck2' name='cks' value = '2' onClick='change();'  checked/>
+                                <label for=""></label>
+                            </div>
+                            <div class="area_info">
+                                <span>아일랜드<br>CC</span>
+                                <span class="open_date">11일 오픈</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='checkbg'>
+                            <div  class="area_bg cap03">이미지</div>
+                            <div class="check-box round">
+                                <input type = 'checkbox' id = 'ck3' name='cks' value = '3' onClick='change();'  checked/>
+                                <label for=""></label>
+                            </div>
+                            <div class="area_info">
+                                <span>아일랜드<br>CC</span>
+                                <span class="open_date">11일 오픈</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="linebar"></span>
+                    </li>
+                    <li>
+                        <div class='checkbg'>
+                            <div  class="area_bg cap04">이미지</div>
+                            <div class="check-box round">
+                                <input type = 'checkbox' id = 'ck4' name='cks' value = '4' onClick='change();' />
+                                <label for=""></label>
+                            </div>
+                            <div class="area_info">
+                                <span>라비에벨</span>
+                                <span class="open_date">4일 오픈</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class='checkbg'>
+                            <div  class="area_bg cap05">이미지</div>
+                            <div class="check-box round">
+                                <input type = 'checkbox' id = 'ck5' name='cks' value = '5' onClick='change();' />
+                                <label for=""></label>
+                            </div>
+
+                            <div class="area_info">
+                                <span>파가니카<br>CC</span>
+                                <span class="open_date">4일 오픈</span>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                </section>
+              </div>        
+              <!--//SecArea 지역선택 -->
+
+            <script>
+    
+            /** 페이지 로드시 체크 박스 선택 되도록 */
+            function initChange() {
+                let cks = document.getElementsByName('cks');    // 체크 박스
+                let checkbg = document.getElementsByClassName('checkbg');   
+                
+                for ( let i = 0 ; i < cks.length ; i++ ) {          
+                    if (cks[i].checked) {                   
+                        checkbg[i].style.background = '#fff';
+                        cks[i].checked = true;
+                    } 
+                }   
+            
+            }
+
+            function change() {
+                let cks = document.getElementsByName('cks');    // 체크 박스
+                let checkbg = document.getElementsByClassName('checkbg');   
+                for ( let i = 0 ; i < cks.length ; i++ ) {          
+                    if (cks[i].checked) {
+                        checkbg[i].style.background = '#fff';
+                    } else {
+                        checkbg[i].style.background = '#f9eff1';
+                    }
+                }
+            }
+
+
+            /** 최초 2번째 체크 박스 선택 처리  */
+            initChange();
+         </script>
+
+
+            <div class="component-wrap">
+                <div class="inner-container">
+                    <div class="btn-group">
+                        <button type="button" class="btn large wide round primary" style="padding: 0 15px;">예약오픈 알림 받기</button>
+                    </div>
+                </div>
+            </div>      
+        </section>   
+	</div>
+	<!-- //Container -->
+    <!--footer -->
+    <div id="footer">
+      <div class="inner">
+        <!-- tabbar-->
+        <div class="tabbar">
+          <ul>
+            <li><div class="on"><img src="./../../images/frame/bottom/Icon_Calendar_on.png" alt="예약하기"><span>예약하기</span></div></li>
+            <li><div><img src="./../../images/frame/bottom/Icon_Checed-Outline.png" alt="나의 예약"><span>나의 예약</span><span class="dotted"></span></div></li>
+            <li><div><img src="./../../images/frame/bottom/Icon_Menu.png" alt="메뉴"><span>메뉴</span></div></li>
+          </ul> 
+        </div>
+        <!--//tabbar-->
+      </div>
+    </div>
+   </div>
+   <!--//wrap-->
+   <!-- 토스트 메시지 -->
+    <div id="toast" class="toast-wrap">
+        <div class="toast">4월 20일 (수요일) 5개 골프장에 <br>
+예약 오픈 알림을 만들었습니다.</div>
+    </div> 
+    <!-- //토스트 메시지 -->
+    </body>
+    </html>
+
+  </body>
+</html>

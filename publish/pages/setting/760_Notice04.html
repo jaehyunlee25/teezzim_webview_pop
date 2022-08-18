@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>TeeZZim</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control"  content="No-Cache">
+    <meta http-equiv="Pragma" content="No-Cache">
+    <meta http-equiv="Expires" content="-1">
+    <link rel="stylesheet" type="text/css" href="./../../css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="./../../css/layout.css" media="all">    
+	<link rel="stylesheet" type="text/css" href="./../../css/app.css" media="all">	
+</head>
+<body>
+<!-- Wrap -->
+<div id="app" class="wrap">
+    <!-- Header -->
+    <div id="header">
+		<button type="button" class="btn-history-back"><span class="offscreen">이전</span></button>
+		<h1 class="headline">알림</h1>		
+	</div>
+    <!-- //Header --> 
+	<!-- Container -->
+	<div id="container" class="">
+		<section class="section-setting">
+            <!-- 알림설정 -->
+            <div class="component-wrap">
+                <div class="inner-container">
+                    <ul class="list-box">
+                        <li class="list-item">
+                            <div class="text-group">
+                                <strong class="text-main">알림 설정</strong>
+                            </div>
+                            <div class="btn-group">
+                                <span class="switch"> 
+                                    <input type="checkbox" name="sSwitch2" id="sSwitch22" value="" checked /> 
+                                    <label class="onoff-switch" for="sSwitch22"><span class="offscreen"></span></label> 
+                                </span>
+                            </div>                            
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+            <!-- //알림설정 --> 
+            <!-- 푸쉬, 배치 -->
+            <div class="component-wrap" style="opacity: 0.33;">
+                <div class="inner-container">
+                    <h2 class="head-caption1">푸쉬알림</h2>
+                    <ul class="list-box">
+                        <li class="list-item">
+                            <div class="text-group">
+                                <strong class="text-main">예약 취소 패널티 하루 전 알림</strong>
+                            </div>
+                            <div class="btn-group">
+                                <span class="check-box round">
+                                    <input type="checkbox" name="sCheck11" id="sCheck11" value="" checked />
+                                    <label for="sCheck11"><span class="offscreen"></span></label>
+                                </span>
+                            </div>                            
+                        </li>  
+                        <li class="list-item">
+                            <div class="text-group">
+                                <strong class="text-main">라운딩 하루 전 알림</strong>
+                            </div>
+                            <div class="btn-group">
+                                <span class="check-box round">
+                                    <input type="checkbox" name="sCheck12" id="sCheck22" value="" checked />
+                                    <label for="sCheck12"><span class="offscreen"></span></label>
+                                </span>
+                            </div>                           
+                        </li>
+                    </ul>                    
+                </div>
+                <div class="inner-container">
+                    <h2 class="head-caption1">배지</h2>
+                    <ul class="list-box">
+                        <li class="list-item">
+                            <div class="text-group">
+                                <strong class="text-main">앱 아이콘 배지 사용</strong>
+                                <p class="text-caption1">앱 아이콘에 예약 숫자를 표시합니다.  </p>
+                            </div>
+                            <div class="btn-group">
+                                <span class="check-box round">
+                                    <input type="checkbox" name="sCheck13" id="sCheck33" value="" checked />
+                                    <label for="sCheck13"><span class="offscreen"></span></label>
+                                </span>
+                            </div>                         
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+            <!-- //푸쉬, 배치 -->            
+        </section>    
+	</div>
+	<!-- //Container -->
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- //Footer -->  
+</div>	
+<!-- //Wrap -->
+<!--- Popup -->
+<div id="popupAlert" class="popup-wrap is-active" data-popup="alert" role="alertdialog" aria-describedby="popupAlertDesc" aria-hidden="false">
+    <div class="popup popup-modal">
+        <div class="popup-inner">
+            <div class="popup-body">
+                <div class="message-box">
+                    <p>기기의 알림이 꺼져 있습니다.<br>알림을 켜주세요.</p>
+                    <span class="text-caption1">설정에서 TeeZZim 알림을 켜주세요.</span>
+                </div>
+            </div>
+            <div class="popup-foot">
+                <ul class="btn-group btn-group__fixed">
+                    <li><button type="button" class="btn large secondary full">취소</button></li>
+                    <li><button type="button" class="btn large primary full">확인</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Popup -->
+</body>
+</html>

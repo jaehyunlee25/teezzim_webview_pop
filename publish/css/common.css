@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+/* @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); */
+
+/* CSS Document */
+
+
+* {
+    -webkit-touch-callout:none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust:none;             /* prevent webkit from resizing text to fit */
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /* prevent tap highlight color / shadow */
+    -webkit-user-select:none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+
+/* 하위버전을 위한 리셋 */
+* { -webkit-touch-callout:none; /* 이미지 길게 터치 방지 */ -webkit-tap-highlight-color:transparent; /* a 클릭시 배경색 제거 */}
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption, summary, canvas {display:block}
+html{height:100%;font-family:-apple-system, Roboto,"Spoqa Han Sans Neo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","BaseLine",Tahoma,Dotum,sans-serif, Gulim,'굴림',sans-serif; font-size:16px; font-size: 1rem;}
+body {margin:0px; padding:0px;  height:100%;overflow-x: hidden;overflow-y: auto;letter-spacing: 0;color: #323233;font-family: Spoqa Han Sans Neo}
+div, p, ol, ul, li, img, a, h1, h2, h3, h4, h5, h6, form, span, iframe, dl, dt, dd {margin: 0px; padding:0px; }
+li{list-style:none;}
+a{text-decoration:none; cursor: pointer;color: #323233;}
+table, th, td {margin:0; padding:0; border:0; border-spacing:0; border-collapse:collapse;}
+img {border:0px; vertical-align:middle;}
+form, fieldset{margin:0; padding:0; border:none;}
+textarea{resize:none; width:auto;}
+input, button, textarea, select {font-family: SFPro;font-size: 16px;border-radius: 0;border: none;background: 0 0;-webkit-appearance: none;-moz-appearance: none;appearance: none;
+    outline: 0; text-decoration: none;cursor: pointer;-webkit-text-size-adjust: none;}
+input,button {outline:none;-webkit-appearance: none;}
+input[type="radio"] { padding:0; vertical-align: middle;}
+select::-ms-expand {display: none ;}
+span {transform:rotate(0.04deg);}
+p {transform:rotate(0.04deg);}
+a,button,input,select,textarea { font-family: -apple-system, Roboto,"Spoqa Han Sans Neo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","BaseLine",Tahoma,Dotum,sans-serif, Gulim,'굴림',sans-serif; font-weight: 400;transform:rotate(0.04deg); } 
+input::-webkit-input-placeholder { font-family: -apple-system, Roboto,"Spoqa Han Sans Neo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","BaseLine",Tahoma,Dotum,sans-serif, Gulim,'굴림',sans-serif } 
+input:-ms-input-placeholder { font-family: -apple-system, Roboto,"Spoqa Han Sans Neo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","BaseLine",Tahoma,Dotum,sans-serif, Gulim,'굴림',sans-serif } 
+input:-moz-placeholder,input::-moz-placeholder { font-family: -apple-system, Roboto,"Spoqa Han Sans Neo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","BaseLine",Tahoma,Dotum,sans-serif, Gulim,'굴림',sans-serif } 
+em {font-style: normal;}
+
+
+
+/* Common */
+.blind,legend{display:block; overflow:hidden; position:absolute; top:-1000em;left:0}
+:root legend{margin-top:-1px ;font-size:0; line-height:0}
+.ellipsis{overflow:hidden; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis}
+.ir {display:block;overflow:hidden;position:relative;z-index:-1;height:11px;font-size:11px;white-space:nowrap;}
+.hidden{position:absolute; width:0; height:0; font-size:0; line-height:0; visibility:hidden;}
+.none, caption ,legend{display:none;}
+
+/* default */
+.fl {float:left}
+.fr {float:right}
+.cboth {display:block;content:"";clear:both}
+.underline {text-decoration:underline}
+.inblk {display:inline-block}
+.vgt{vertical-align:top}
+.vgm{vertical-align:middle}
+.ovh{overflow:hidden}
+
+
+
+/* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess */
+
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 300;
+   src: url(../fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
+        url(../fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
+        url(../fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 500;
+   src: url(../fonts/NotoSansKr/NotoSansKR-Medium.woff2) format('woff2'),
+        url(../fonts/NotoSansKr/NotoSansKR-Medium.woff) format('woff'),
+        url(../fonts/NotoSansKr/NotoSansKR-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 600;
+   src: url(../fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
+        url(../fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
+        url(../fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
+ }
+
+/*나눔 고딕 글꼴*/
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NanumGothic/NanumGothic-Regular.eot');
+  src: url('../fonts/NanumGothic/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/NanumGothic/NanumGothic-Regular.woff2') format('woff2'),
+       url('../fonts/NanumGothic/NanumGothic-Regular.woff') format('woff'),
+       url('../fonts/NanumGothic/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/NanumGothic/NanumGothic-Bold.eot');
+  src: url('../fonts/NanumGothic/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/NanumGothic/NanumGothic-Bold.woff2') format('woff2'),
+       url('../fonts/NanumGothic/NanumGothic-Bold.woff') format('woff'),
+       url('../fonts/NanumGothic/NanumGothic-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/NanumGothic/NanumGothic-ExtraBold.eot');
+  src: url('../fonts/NanumGothic/NanumGothic-ExtraBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/NanumGothic/NanumGothic-ExtraBold.woff2') format('woff2'),
+       url('../fonts/NanumGothic/NanumGothic-ExtraBold.woff') format('woff'),
+       url('../fonts/NanumGothic/NanumGothic-ExtraBold.ttf') format('truetype');
+}
+
+/*SpoqaHanSansNeo*/
+@font-face {
+     font-family: 'Spoqa Han Sans Neo';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.eot');
+     src: url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff') format('woff'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+   }
+   @font-face {
+     font-family: 'Spoqa Han Sans Neo';
+     font-style: normal;
+     font-weight: 500;
+     font-display: swap;
+     src: url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.eot');
+     src: url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff') format('woff'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+   }
+   @font-face {
+     font-family: 'Spoqa Han Sans Neo';
+     font-style: normal;
+     font-weight: 600;
+     font-display: swap;
+     src: url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.eot');
+     src: url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.eot?#iefix') format('embedded-opentype'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff') format('woff'),
+          url('../fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+   }
+
+
+/*
+
+font
+@font-face {font-family: 'Noto Sans KR';
+font-style: normal;font-weight: 400;
+src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2)
+format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff)
+format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf)
+format('opentype');}
+@font-face {font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2)
+format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff)
+format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf)
+format('opentype');}
+@font-face {font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2)
+format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff)
+format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf)
+format('opentype');}
+
+
+
+
+/* iOS 11.0 버전
+constant(safe-area-inset-top)
+constant(safe-area-inset-right)
+constant(safe-area-inset-bottom)
+constant(safe-area-inset-left)
+// iOS 11.2 이상
+env(safe-area-inset-top)
+env(safe-area-inset-right)
+env(safe-area-inset-bottom)
+env(safe-area-inset-left)
+*/
+
+
+

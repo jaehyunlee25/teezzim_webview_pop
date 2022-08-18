@@ -1,0 +1,3189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>PublishingList-TeeZZim</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control"  content="No-Cache">
+    <meta http-equiv="Pragma" content="No-Cache">
+    <meta http-equiv="Expires" content="-1">
+	<style>
+html, body, div, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, tr, th, td, caption, address,
+canvas, details, figure, figcaption, footer, header, menu, nav, section, article, aside,
+form, fieldset, button, select, textarea, input, fieldset, legend, label, a, span, strong, em, address, dfn, small, i, b, ::before, ::after {margin:0; padding:0; border:0; list-style:none; color:inherit; font-style:normal; font-size:100%; font-weight:inherit; font-family:inherit; line-height:inherit; word-break:inherit; word-wrap:inherit; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box;}
+article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {display:block;}
+body {font-family:"Spoqa Han Sans Neo","Malgun Gothic","맑은 고딕", "Dotum", "Dotumche", "돋움", "돋움체", "Arial"; font-size:13px; letter-spacing: -.5px; font-weight:400; color:#333; line-height:1.5; word-break:keep-all; word-wrap:word-break; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;}
+html[lang=ja] body, html[lang=zh] body {word-break:normal;}
+[hidden], hr {display:none;}
+img {vertical-align:middle;}
+button {background-color:transparent; cursor:pointer;}
+b, strong {font-weight:normal;}
+fieldset, iframe {width:100%;}
+img, a, frame, iframe, fieldset {border:0;}
+a {text-decoration:none;}
+table {width:100%; border-spacing:0; border-collapse:collapse;}
+
+.in-sec {padding:0 20px; max-width:100%;}
+.content-header {position: fixed;z-index: 100;width: 100%;height: 60px;line-height: 60px;background-color: #01a2de;}
+.content-header > .in-sec {position: relative;}
+.content-body {padding: 80px 20px 50px;}
+.section-header {padding: 10px 20px;border: 0;background-color: #444;color: #fff;}
+.section-header .h2 {font-size: 18px;font-weight: normal;}
+.content-header .in-sec {transition:all 0.3s ease-out;-webkit-transition:all 0.3s ease-out 0s;-moz-transition:all 0.3s ease-out 0s;-o-transition:all 0.3s ease-out 0s;}
+.section-body .h3 {font-size: 15px;margin: 15px 0 5px;letter-spacing: -.5px;}
+.section-body .h3:before {content: '';display: inline-block;position: relative;top: -1px;width: 3px;height: 13px;margin-right: 5px;background-color: #278df5;vertical-align: middle;}
+.section {line-height:1.8;}
+.section:first-child {margin-top:0;}
+.section + .section {margin-top:50px;}
+.lnb {position: absolute;right: 10px;top: 0;}
+.lnb > ul {display: inline-block;}
+.lnb > ul > li {position: relative;display: inline-block;}
+.lnb > ul > li > a {display: block;line-height: 30px;border-radius: 20px;font-size: 14px;padding: 0 15px;font-weight: 700;color: #fff;}
+.lnb > ul > li.is-current > a {background-color: #fff;color: #333;}
+.h1 {display:inline-block; font-size:20px;font-weight:normal; color:#fff;}
+.h2 {font-size:22px;}
+.h2:before {display:block; width:20px; height:1px; margin-bottom:5px; background-color:#222;}
+.h2 a {color:#fff;}
+.h3:first-child {margin-top:0;}
+.h4 {color:#278df5; font-weight:bold;}
+.h3 + .h4 {margin-top:10px;}
+.h4:before {content:''; display:inline-block; position:relative; top:0px; width:3px; height:3px; margin-right:5px; background-color:#278df5; vertical-align:middle;}
+.h4 small {color: #990000;font-size: 12px;padding-left: 10px;font-weight: normal;}
+.h4 small:before {content:'*';display:inline-block;margin-right: 5px;position:relative;top: 2px;}
+
+.g-tbl-type2 {border-top:2px solid #444; border-bottom:1px solid #444;}
+.g-tbl-type2 table th,
+.g-tbl-type2 table td {height:36px; padding:3px 10px; text-align:center; font-size:13px; border-left:1px solid #ddd;border-right:1px solid #ddd;}
+.g-tbl-type2 table th {border-bottom:1px solid #444; font-weight:bold; font-size:14px;}
+.g-tbl-type2 table td {border-top:1px solid #eee; color:#333;}
+.g-tbl-type2 table tr:first-child td {border-top:0;}
+
+.g-tbl-type2 table tbody + tbody tr:first-child td {border-top:1px solid #ccc;}
+.g-tbl-type2 table td.col-url,
+.g-tbl-type2 table td.col-memo,
+.g-tbl-type2 table td.col-1depth,
+.g-tbl-type2 table td.col-2depth,
+.g-tbl-type2 table td.col-3depth,
+.g-tbl-type2 table td.col-4depth,
+.g-tbl-type2 table td.col-5depth {text-align:left;}
+.g-tbl-type2 table td.col-1depth {color:#333; font-weight:bold; font-size:14px;}
+.g-tbl-type2 table td.col-complete[data-complete=wait] {color:#e52c1e;}
+.g-tbl-type2 table td.col-complete[data-complete=done] {color:#005aff;}
+.g-tbl-type2 table td.col-complete[data-complete]:after {content:attr(data-complete)}
+.g-tbl-type2 table td.col-complete[data-complete=wait]:after {content:''}
+.g-tbl-type2 table td.col-complete[data-complete=done]:after {content:'완료'}
+.g-tbl-type2 table td.col-complete[data-complete=del]:after {content:'삭제'}
+.g-tbl-type2 table td.col-complete[data-complete=except]:after {content:'제외'}
+.g-tbl-type2 table td.col-type[data-type]:after {content:attr(data-type);}
+.g-tbl-type2 table td.col-url a {border-bottom:1px solid #333;}
+.g-tbl-type2 table tr.row-done td {background-color:#f2f8fc;}
+.g-tbl-type2 table tr.row-del td {background-color:#f0f0f0; color:#bbb;}
+.g-tbl-type2 table tr.row-del td a {color:#bbb; border-bottom:1px solid #bbb;}
+.g-tbl-type2 table tr.row-except td {background-color:#f0f0f0;}
+.g-tbl-type2 table tbody + tbody tr:first-child td {border-top: 1px solid #666;}
+p.desc, ul.desc > li {position: relative;padding: 0 0 0 10px;font-size: 14px;line-height: 1.6;}
+p.desc:before, ul.desc > li:before {content: '';position: absolute;left: 0;top: 10px;display: block;width: 2px;height: 2px;background: #555;border-radius: 50%;}	
+	</style>
+</head>
+<body>
+<div id="wrap" class="">
+	<div id="container">
+		<div id="content">
+			<div class="content-header" style="background-color:#1fafd2">
+				<div class="in-sec">
+					<h1 class="h1">TeeZZim App Publishing List</h1>	
+					<nav class="lnb">				
+						<ul>
+							<li>작성일 : 2022.03.16</li> 	
+						</ul>			
+					</nav>	
+				</div>
+			</div>
+			<div class="content-body">	
+				<!--  -->	
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">00_스타일가이드 및 공통</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr>
+											<td class="col-num">1</td>
+											<td class="col-1depth"></td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth"></td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- // -->	
+				<!-- 000. 처음사용자 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">000. 처음사용자</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr>
+											<td class="col-num">1</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">000_Springboard</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo"></td>
+										</tr>	
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">010_Splash01</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="main.html" target="_blank">main.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">010_Splash02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="splash02.html" target="_blank">Splash02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">010_Splash03</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="splash03.html" target="_blank">Splash03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">010_Splash04</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="splash04.html" target="_blank">Splash04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">6</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore01</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore01.html" target="_blank">772_Restore01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore03</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore03.html" target="_blank">772_Restore03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">처음사용자</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore04</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore04.html" target="_blank">772_Restore04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>														
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //000. 처음사용자 -->
+				<!-- Untitled section -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">Untitled section</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr>
+											<td class="col-num">1</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore05</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore05.html 과 동일</td>
+										</tr>	
+										<tr>
+											<td class="col-num">2</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore06.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">3</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore07</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore07.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">4</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore08</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore08.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">5</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore09</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore09.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore10</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore10.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">7</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">020_Restore11</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">772_Restore11.html 과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">030_DLG01</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/030_DLG01.html" target="_blank">030_DLG01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 오류수정</td>
+										</tr>	
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">030_DLG02</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/030_DLG02.html" target="_blank">030_DLG02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 오류수정</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">030_DLG03</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/030_DLG03.html" target="_blank">030_DLG03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 오류수정</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">030_DLG04</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/030_DLG04.html" target="_blank">030_DLG04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 오류수정</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">030_DLG05</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/030_DLG05.html" target="_blank">030_DLG05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 오류수정</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">Untitled section</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">030_DLG06</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/030_DLG06.html" target="_blank">030_DLG06.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 오류수정</td>
+										</tr>														
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //000. Untitled section -->
+				<!-- 100. 골프장 홈페이지 계정 패널 관리 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">100. 골프장 홈페이지 계정 패널관리</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr>
+											<td class="col-num">1</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">010_Splash022</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">101_inidlg01</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/101_inidlg01.html" target="_blank">101_inidlg01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">101_inidlg02</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/101_inidlg02.html" target="_blank">101_inidlg02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">101_inidlg03</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/101_inidlg03.html" target="_blank">101_inidlg03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">110_toast01 / 121_dn_list 01~03</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/110_toast01.html" target="_blank">110_toast01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">6</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">110_toast02</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/110_toast02.html" target="_blank">110_toast02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>																					
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">120_switch_01</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/120_switch_01.html" target="_blank">120_switch_01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>	
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">121_dn_calendar01</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/121_dn_calendar01.html" target="_blank">121_dn_calendar01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">121_dn_calendar02</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/121_dn_calendar02.html" target="_blank">121_dn_calendar02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">10</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">122_d4-card01</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/122_d4-card01.html" target="_blank">122_d4-card01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">11</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">122_d4-card02</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/122_d4-card02.html" target="_blank">122_d4-card02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">12</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">122_d4-card03</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/122_d4-card03.html" target="_blank">122_d4-card03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">13</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">121_dn_calendar03</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/121_dn_calendar03.html" target="_blank">121_dn_calendar03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">14</td>
+											<td class="col-1depth">골프장 홈페이지 계정 패널관리</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">122_d4-card03-doc</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/122_d4-card03-doc.html" target="_blank">122_d4-card03-doc.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //100. 골프장 홈페이지 계정 패널 관리 -->	
+				<!-- 130. 골프장 계정등록 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">130. 골프장 계정등록</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">110_toast03</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/110_toast03.html" target="_blank">110_toast03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>										
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add01 ~ 130_add04 </td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="130_add_01.html" target="_blank">130_add_01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"> 스크립트 적용</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">6</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add05</td>
+											<td class="col-folder">setting</td>
+											<td class="col-url"><a href="setting/130_add_05.html" target="_blank">130_add_05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">7</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">110_toast01.html 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add07</td>
+											<td class="col-folder">setting</td>
+											<td class="col-url"><a href="setting/130_add_07.html" target="_blank">130_add_07.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">9</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add08</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add01 ~ 130_add04 와 동일</td>
+										</tr>																										<tr>
+											<td class="col-num">10</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add09</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_05 와 동일 로고이미지만 다름</td>
+										</tr>
+										<tr>
+											<td class="col-num">11</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add10</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07 와 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">12</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add11</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07 와 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">13</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add12</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07 와 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">14</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add13</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="setting/130_add_13.html" target="_blank">130_add_13.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">15</td>
+											<td class="col-1depth">골프장 계정등록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">130_add_03_err</td>
+											<td class="col-folder">setting</td>
+											<td class="col-url"><a href="setting/130_add_03_err.html" target="_blank">130_add_03_err.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //130. 골프장 계정등록 -->	
+				<!-- 140. 검색 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">140. 검색</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">검색</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">140_Search_01</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="setting/140_Search_01.html" target="_blank">140_Search_01.html</a></td>								
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">검색</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">140_Search_02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="setting/140_Search_02.html" target="_blank">140_Search_02.html</a></td>													
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">검색</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">140_Search_03</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="setting/140_Search_03.html" target="_blank">140_Search_03.html</a></td>											
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">검색</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">140_Search_04 ~ 140_Search_05</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="setting/140_Search_05.html" target="_blank">140_Search_05.html</a></td>										
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">검색</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">140_Search_06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="setting/140_Search_06.html" target="_blank">140_Search_06.html</a></td>													
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">추가작업</td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">검색</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">140_Search_07</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_13 와동일</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //140. 검색 -->
+				<!-- 134. 연결장애 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">134. 연결장애</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">132_ac00</td>
+											<td class="col-folder">error</td>
+											<td class="col-url"><a href="error/132_ac00.html" target="_blank">132_ac00.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">133_ac01</td>
+											<td class="col-folder">error</td>
+											<td class="col-url"><a href="error/133_ac01.html" target="_blank">133_ac01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">133_ac02</td>
+											<td class="col-folder">error</td>
+											<td class="col-url"><a href="error/133_ac02.html" target="_blank">133_ac02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">4</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">133_ac03</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_01.html 와 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">134_ac01</td>
+											<td class="col-folder">error</td>
+											<td class="col-url"><a href="error/134_ac01.html" target="_blank">134_ac01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">134_ac02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">133_ac02.html 와 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">연결장애</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">135_ac01</td>
+											<td class="col-folder">error</td>
+											<td class="col-url"><a href="error/135_ac01.html" target="_blank">135_ac01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //134. 연결장애 -->
+				<!-- 200. 홈 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">200. 홈</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">홈</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">200_Home01</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="200_Home01.html" target="_blank">200_Home01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr>
+											<td class="col-num">2</td>
+											<td class="col-1depth">홈</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">200_Home02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">121_dn_calendar02.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">3</td>
+											<td class="col-1depth">홈</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">200_Home03</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07.html 과동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">4</td>
+											<td class="col-1depth">홈</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">200_Home04</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07.html 과동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">5</td>
+											<td class="col-1depth">홈</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">200_Home05</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07.html 과동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">홈</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">200_Home06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">121_dn_calendar02.html 과 동일</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //200. 홈 -->	
+				<!-- 300. 필터 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">300. 필터</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">필터</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">300_HomeFillter02</td>
+											<td class="col-folder">filter</td>
+											<td class="col-url"><a href="filter/300_HomeFillter02.html" target="_blank">300_HomeFillter02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">필터</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">300_HomeFillter05</td>
+											<td class="col-folder">filter</td>
+											<td class="col-url"><a href="filter/300_HomeFillter05.html" target="_blank">300_HomeFillter05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">필터</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">300_HomeFillter07</td>
+											<td class="col-folder">filter</td>
+											<td class="col-url"><a href="filter/300_HomeFillter07.html" target="_blank">300_HomeFillter07.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">필터</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">300_HomeFillter08</td>
+											<td class="col-folder">filter</td>
+											<td class="col-url"><a href="filter/300_HomeFillter08.html" target="_blank">300_HomeFillter08.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //300. 필터 -->
+				<!-- 400. 예약 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">400. 예약</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">400_Book02</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/400_Book02.html" target="_blank">400_Book02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">400_Book03</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/400_Book03.html" target="_blank">400_Book03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">400_Book04</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/400_Book04.html" target="_blank">400_Book04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">400_Book05</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/400_Book05.html" target="_blank">400_Book05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">400_Book06</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/400_Book06.html" target="_blank">400_Book06.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">6</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">410_Detail</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/410_Detail.html" target="_blank">410_Detail.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">420_Book01</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/420_Book01.html" target="_blank">420_Book01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">420_Book02</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/420_Book02.html" target="_blank">420_Book02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">440_Book03</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/440_Book03.html" target="_blank">440_Book03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>																										<tr class="row-done">
+											<td class="col-num">10</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">440_Book06</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/440_Book06.html" target="_blank">440_Book06.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">11</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">440_Book05</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="130_add_01.html" target="_blank">130_add_01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>	
+										<tr class="row-done">
+											<td class="col-num">12</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">422_Detail</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/422_Detail.html" target="_blank">422_Detail.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">13</td>
+											<td class="col-1depth">예약</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">423_Detail</td>
+											<td class="col-folder">booking</td>
+											<td class="col-url"><a href="booking/423_Detail.html" target="_blank">423_Detail.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //400. 예약 -->
+				<!-- 500. 예약대기 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">500. 예약대기</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait03</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/500_Wait03.html" target="_blank">500_Wait03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr>
+											<td class="col-num">2</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait07</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">122_d4-card02.html 과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait08</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/500_Wait08.html" target="_blank">500_Wait08.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr>
+											<td class="col-num">4</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">5</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait04</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait05</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">130_add_07.html 과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">7</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">500_Wait06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>											
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">122_d4-card02.html 과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">예약대기</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">550_Alrm04</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/550_Alrm04.html" target="_blank">550_Alrm04.html</a></td>									
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월25일 추가작업</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //500. 예약대기 -->																												<!-- 550. 예약오픈 알림 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">550. 예약오픈 알림</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">예약오픈 알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">550_Alrm05</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/550_Alrm05.html" target="_blank">550_Alrm05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월24일 추가</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">예약오픈 알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">550_Alrm06</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/550_Alrm06.html" target="_blank">550_Alrm06.html</a></td>											
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월25일 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">예약오픈 알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">550_Alrm07</td>
+											<td class="col-folder">panel</td>
+											<td class="col-url"><a href="panel/550_Alrm07.html" target="_blank">550_Alrm07.html</a></td>												
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3월25일 추가작업</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //550. 예약오픈 알림 -->
+				<!-- 600. 나의 예약 탭 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">600. 나의 예약 탭</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">600_MyList01</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/600_MyList01.html" target="_blank">600_MyList01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">600_MyList02</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/600_MyList02.html" target="_blank">600_MyList02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">600_MyList03</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/600_MyList03.html" target="_blank">600_MyList03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">610_MyBook01</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/610_MyBook01.html" target="_blank">610_MyBook01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">5</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">610_MyBook02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">610_MyBook01.html 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">620_MyWait02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">600_MyList01.html 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">630_MyEdit04</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/630_MyEdit04.html" target="_blank">630_MyEdit04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">640_MyEdit04</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/640_MyEdit04.html" target="_blank">640_MyEdit04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">640_MyEdit05</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/640_MyEdit05.html" target="_blank">640_MyEdit05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">10</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">640_MyEdit06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">630_MyEdit04.html과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">11</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">610_MyBook03</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">600_MyList01.html과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">12</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">611_MyBook01</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/611_MyBook01.html" target="_blank">611_MyBook01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">13</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">611_MyBook02</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/611_MyBook02.html" target="_blank">611_MyBook02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr>
+											<td class="col-num">14</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">620_MyWait01</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">600_MyList01.html과 동일 </td>
+										</tr>
+										<tr>
+											<td class="col-num">15</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">630_MyEdit01</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">600_MyList01.html 과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">16</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">630_MyEdit02</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/630_MyEdit02.html" target="_blank">630_MyEdit02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">17</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">630_MyEdit03</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/630_MyEdit03.html" target="_blank">630_MyEdit03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">18</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">640_MyEdit01</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/640_MyEdit01.html" target="_blank">640_MyEdit01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr>
+											<td class="col-num">19</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">640_MyEdit02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">640_MyEdit04.html과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">20</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">640_MyEdit03</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">640_MyEdit05.html 과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">21</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">680_Myimport02</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/680_Myimport02.html" target="_blank">680_Myimport02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">22</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">680_Myimport03</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/680_Myimport03.html" target="_blank">680_Myimport03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">23</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">680_Myimport04</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/680_Myimport04.html" target="_blank">680_Myimport04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">24</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">680_Myimport05</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/680_Myimport05.html" target="_blank">680_Myimport05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">25</td>
+											<td class="col-1depth">나의 예약 탭</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">680_Myimport06</td>
+											<td class="col-folder">mybooking</td>
+											<td class="col-url"><a href="mybooking/680_Myimport06.html" target="_blank">680_Myimport06.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>																				
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //600. 나의 예약 탭 -->
+				<!-- 700. 메뉴 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">700. 메뉴</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">메뉴</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">700_Menu</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="bottom.html" target="_blank">bottom.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">하단 메뉴 버튼 클릭시 재생됨</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //700. 메뉴 -->				
+				<!-- 730. 나의기록 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">730. 나의기록</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory01</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/731_Mystory01.html" target="_blank">731_Mystory01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory02 ~ 731_Mystory04</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/731_Mystory02.html" target="_blank">731_Mystory02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">3</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory05 ~ 731_Mystory06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">개발진행</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory07</td>
+											<td class="col-folder"></td>
+											<td class="col-url"><a href="record/731_Mystory10.html" target="_blank">731_Mystory10.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory08</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/731_Mystory02.html" target="_blank">731_Mystory02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">9</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory09</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">개발진행</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">10</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory10</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/731_Mystory10.html" target="_blank">731_Mystory10.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">11</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory11</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">개발진행</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">12</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory12</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/731_Mystory12.html" target="_blank">731_Mystory12.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">13</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory13</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/731_Mystory13.html" target="_blank">731_Mystory13.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">731_Mystory08.html 과동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">14</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory14</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">731_Mystory08.html 과동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">15</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">732_Mystory01</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/732_Mystory01.html" target="_blank">732_Mystory01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">16</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">732_Mystory01</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/732_Mystory01.html" target="_blank">732_Mystory01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">17</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">731_Mystory15</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo">731_Mystory01.html과 동일</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">18</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">733_Mystory_delete02</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/733_Mystory_delete02.html" target="_blank">733_Mystory_delete02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">19</td>
+											<td class="col-1depth">나의기록</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">733_Mystory03</td>
+											<td class="col-folder">record</td>
+											<td class="col-url"><a href="record/733_Mystory03.html" target="_blank">733_Mystory03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">김소영</td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //730. 나의기록 -->
+				<!-- 750. 화면잠금 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">750. 화면잠금</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock01</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock01.html" target="_blank">750_Lock01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock02</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock02.html" target="_blank">750_Lock02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock03</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock03.html" target="_blank">750_Lock03.html</a></td>	
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock04</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock04.html" target="_blank">750_Lock04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock05</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock01.html" target="_blank">750_Lock01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">750_Lock01.html과 동일</td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">앱 아이콘 표시</td>
+										</tr>
+										<tr>
+											<td class="col-num">7</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock07</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">작업제외</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock08</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock08.html" target="_blank">750_Lock08.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">화면잠금</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">750_Lock09</td>
+											<td class="col-folder">lock</td>
+											<td class="col-url"><a href="lock/750_Lock09.html" target="_blank">750_Lock09.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">3/24 추가작업</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //750. 화면잠금 -->
+				<!-- 760. 알림 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">760. 알림</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice01</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice01.html" target="_blank">760_Notice01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice02</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice02.html" target="_blank">760_Notice02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice03</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice03.html" target="_blank">760_Notice03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice04</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice04.html" target="_blank">760_Notice04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice05</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice05.html" target="_blank">760_Notice05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">6</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice06</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">푸쉬알림</td>
+										</tr>
+										<tr>
+											<td class="col-num">7</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice07</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">푸쉬알림</td>
+										</tr>
+										<tr>
+											<td class="col-num">8</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice08</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">푸쉬알림</td>
+										</tr>
+										<tr>
+											<td class="col-num">9</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice09</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">푸쉬알림</td>
+										</tr>																							
+										<tr class="row-done">
+											<td class="col-num">10</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice10</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice10.html" target="_blank">760_Notice10.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">11</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice11</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice11.html" target="_blank">760_Notice11.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">12</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice12</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo">푸쉬알림</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">13</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice13</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice13.html" target="_blank">760_Notice13.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">14</td>
+											<td class="col-1depth">알림</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">760_Notice14</td>
+											<td class="col-folder">allim</td>
+											<td class="col-url"><a href="allim/760_Notice14.html" target="_blank">760_Notice14.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //760. 알림 -->
+				<!-- 770. 백업&복원 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">770. 백업&복원</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr class="row-done">
+											<td class="col-num">1</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">770_Backup_n_Restore</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/770_Backup_n_Restore.html" target="_blank">770_Backup_n_Restore.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">2</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup01</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup01.html" target="_blank">771_Backup01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">3</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup02</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup02.html" target="_blank">771_Backup02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">771_Backup03 동일함</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">4</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup03</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup03.html" target="_blank">771_Backup03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo">771_Backup02 동일함</td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">5</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup04</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup04.html" target="_blank">771_Backup04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">6</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup05</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup05.html" target="_blank">771_Backup05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">7</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup06</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup06.html" target="_blank">771_Backup06.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">8</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup07</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup07.html" target="_blank">771_Backup07.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">9</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup08</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup08.html" target="_blank">771_Backup08.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>																										<tr class="row-done">
+											<td class="col-num">10</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">771_Backup09</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/771_Backup09.html" target="_blank">771_Backup09.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">11</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore01</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore01.html" target="_blank">772_Restore01.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">12</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore02</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore02.html" target="_blank">772_Restore02.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">13</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore03</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore03.html" target="_blank">772_Restore03.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">14</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore04</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore04.html" target="_blank">772_Restore04.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">15</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore05</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore05.html" target="_blank">772_Restore05.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">16</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore06</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore06.html" target="_blank">772_Restore06.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">17</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore07</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore07.html" target="_blank">772_Restore07.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">18</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore08</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore08.html" target="_blank">772_Restore08.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr class="row-done">
+											<td class="col-num">19</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore09</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore09.html" target="_blank">772_Restore09.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>																										<tr class="row-done">
+											<td class="col-num">20</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore10</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore10.html" target="_blank">772_Restore10.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>	
+										<tr class="row-done">
+											<td class="col-num">21</td>
+											<td class="col-1depth">백업&복원</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">772_Restore11</td>
+											<td class="col-folder">backup</td>
+											<td class="col-url"><a href="backup/772_Restore11.html" target="_blank">772_Restore11.html</a></td>
+											<td class="col-complete" data-complete="done"></td>
+											<td class="col-complete"></td>
+											<td class="col-worker">이은경</td>
+											<td class="col-memo"></td>
+										</tr>																				
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //770. 백업&복원 -->
+				<!-- 780. 골프장홈페이지 & 이 앱에 관하여 -->
+				<section class="section">	
+					<div class="section-header">
+						<h2 class="h2">780. 골프장홈페이지 & 이 앱에 관하여</h2>
+					</div>		
+					<div class="section-body">
+						<div class="tab-content type-list is-visible">
+							<div class="g-tbl-type2">
+								<table>
+									<colgroup>
+										<col width="5%">
+										<col width="15%">
+										<col width="8%">
+										<col width="12%">
+										<col width="8%">
+										<col width="15%">
+										<col width="5%">
+										<col width="5%">
+										<col width="5%">
+										<col width="*">									
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">번호</th>
+											<th scope="col" rowspan="2" class="col-1depth">1Depth</th>
+											<th scope="col" rowspan="2" class="col-2depth">2Depth</th>
+											<th scope="col" rowspan="2" class="col-3depth">화면명</th>
+											<th scope="col" rowspan="2">폴더명</th>
+											<th scope="col" rowspan="2">URL</th>
+											<th scope="colgroup" colspan="2">상태</th>
+											<th scope="col" rowspan="2">담당자</th>
+											<th scope="col" rowspan="2">비고</th>
+										</tr>
+										<tr>
+											<th scope="col">1차</th>
+											<th scope="col">2차</th>
+										</tr>										
+									</thead>
+									<tbody>
+										<tr>
+											<td class="col-num">1</td>
+											<td class="col-1depth">골프장홈페이지 & 이 앱에 관하여</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">780_Favorite01</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete" data-complete="wait">작업제외</td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo"></td>
+										</tr>	
+										<tr>
+											<td class="col-num">2</td>
+											<td class="col-1depth">골프장홈페이지 & 이 앱에 관하여</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">780_Favorite02</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete" data-complete="wait">작업제외</td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo"></td>
+										</tr>
+										<tr>
+											<td class="col-num">3</td>
+											<td class="col-1depth">골프장홈페이지 & 이 앱에 관하여</td>
+											<td class="col-2depth"></td>
+											<td class="col-3depth">810_About</td>
+											<td class="col-folder"></td>
+											<td class="col-url"></td>
+											<td class="col-complete">보류</td>
+											<td class="col-complete"></td>
+											<td class="col-worker"></td>
+											<td class="col-memo"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //780. 골프장홈페이지 & 이 앱에 관하여 -->				
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</body></html>
