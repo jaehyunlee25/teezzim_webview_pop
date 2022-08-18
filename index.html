@@ -25,33 +25,35 @@
 		<h1>web view popup test</h1>
 		<div style="text-align:center;"><button id="btnEnd">팝업종료</button></div>
 		<h1 id="elUUID"></h1>
-		<!--- Popup -->
-		<div 
-			id="popupAlert" 
-			class="popup-wrap is-active" 
-			data-popup="alert" 
-			role="alertdialog" 
-			aria-describedby="popupAlertDesc" 
-			aria-hidden="false">
-			
-			<div class="popup popup-modal">
-				<div class="popup-inner">
-					<div class="popup-body">
-						<div class="message-box">
-							<p>기기의 알림이 꺼져 있습니다.<br>알림을 켜주세요.</p>
-							<span class="text-caption1">설정에서 TeeZZim 알림을 켜주세요.</span>
+		<div id="app" class="wrap">
+			<!--- Popup -->
+			<div 
+				id="popupAlert" 
+				class="popup-wrap is-active" 
+				data-popup="alert" 
+				role="alertdialog" 
+				aria-describedby="popupAlertDesc" 
+				aria-hidden="false">
+	
+				<div class="popup popup-modal">
+					<div class="popup-inner">
+						<div class="popup-body">
+							<div class="message-box">
+								<p>기기의 알림이 꺼져 있습니다.<br>알림을 켜주세요.</p>
+								<span class="text-caption1">설정에서 TeeZZim 알림을 켜주세요.</span>
+							</div>
 						</div>
-					</div>
-					<div class="popup-foot">
-						<ul class="btn-group btn-group__fixed">
-							<li><button type="button" class="btn large secondary full">취소</button></li>
-							<li><button type="button" class="btn large primary full">확인</button></li>
-						</ul>
+						<div class="popup-foot">
+							<ul class="btn-group btn-group__fixed">
+								<li><button type="button" class="btn large secondary full">취소</button></li>
+								<li><button type="button" class="btn large primary full">확인</button></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!-- //Popup -->
 		</div>
-		<!-- //Popup -->
 	</body>
 	<script>
 		btnEnd.onclick = function() {
