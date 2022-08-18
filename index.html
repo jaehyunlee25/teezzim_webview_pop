@@ -45,8 +45,8 @@
 						</div>
 						<div class="popup-foot">
 							<ul class="btn-group btn-group__fixed">
-								<li><button type="button" class="btn large secondary full">취소</button></li>
-								<li><button type="button" class="btn large primary full">확인</button></li>
+								<li><button id="btnCancel" type="button" class="btn large secondary full">취소</button></li>
+								<li><button id="btnConfirm" type="button" class="btn large primary full">확인</button></li>
 							</ul>
 						</div>
 					</div>
@@ -56,7 +56,7 @@
 		</div>
 	</body>
 	<script>
-		btnEnd.onclick = function() {
+		btnConfirm.onclick = function() {
 			const ab = window.AndroidBridge;
 			if(ab) ab.message("REQUEST_END");
 		}
