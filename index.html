@@ -18,6 +18,9 @@
 				ANDROID_MAIN_UUID = uuid;
 				/* elUUID.innerHTML = "UUID: " + ANDROID_MAIN_UUID; */
 			}
+			function setPopupMessage(str) {
+				msgPopup.innerHTML = str;
+			}
 
 		</script>
 	</head>
@@ -39,9 +42,8 @@
 				<div class="popup popup-modal">
 					<div class="popup-inner">
 						<div class="popup-body">
-							<div class="message-box">
-								<p>기기의 알림이 꺼져 있습니다.<br>알림을 켜주세요.</p>
-								<span class="text-caption1">설정에서 TeeZZim 알림을 켜주세요.</span>
+							<div id="msgPopup" class="message-box">
+								
 							</div>
 						</div>
 						<div class="popup-foot">
