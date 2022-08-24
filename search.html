@@ -16,7 +16,7 @@
 			let ANDROID_MAIN_UUID;
 			let ac = false; 
 			try {
-				ac = window.AndroidController || window.webkit.messageHandlers.iosController;
+				ac = window.AndroidBridge || window.webkit.messageHandlers.iosController;
 				ac.message = ac.message || window.webkit.messageHandlers.iosController.postMessage;
 			} catch(e) {
 				ac = false;
@@ -45,7 +45,7 @@
 				if(param.success + param.fail + param.none + param.timeout == param.total) {
 					console.log("okay");
 					console.log(ac);
-					console.log(ac.message);
+					console.log(ac.message);s
 					if(ac) ac.message("REQUEST_END");
 				}
 			}
