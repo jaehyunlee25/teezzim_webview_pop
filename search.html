@@ -40,6 +40,7 @@
 				*/
 				msgPopup.innerHTML = str;
 				console.log("setPopupMessage", param.success, param.fail, param.none, param.timeout, param.total);
+				console.log(param.success + param.fail + param.none + param.timeout, param.total);
 				if(param.success + param.fail + param.none + param.timeout == param.total) {
 					if(ac) ac.message("REQUEST_END");
 				}
