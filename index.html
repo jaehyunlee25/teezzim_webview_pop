@@ -14,6 +14,13 @@
 		<link rel="stylesheet" type="text/css" href="./publish/css/app.css" media="all">	
 		<script>
 			let ANDROID_MAIN_UUID;
+			let ac = false; 
+			try {
+				ac = window.AndroidController || window.webkit.messageHandlers.iosController;
+				ac.message = ac.message || window.webkit.messageHandlers.iosController.postMessage;
+			} catch(e) {
+				ac = false;
+			}
 			function setAndroidMainUUID(uuid) {
 				ANDROID_MAIN_UUID = uuid;
 				/* elUUID.innerHTML = "UUID: " + ANDROID_MAIN_UUID; */
@@ -61,7 +68,6 @@
 	</body>
 	<script>
 		btnConfirm.onclick = function() {
-			const ab = window.AndroidBridge;
 			if(ab) ab.message("REQUEST_END");
 		}
 	</script>

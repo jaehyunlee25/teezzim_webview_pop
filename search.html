@@ -14,6 +14,13 @@
 		<link rel="stylesheet" type="text/css" href="./publish/css/app.css" media="all">	
 		<script>
 			let ANDROID_MAIN_UUID;
+			let ac = false; 
+			try {
+				ac = window.AndroidController || window.webkit.messageHandlers.iosController;
+				ac.message = ac.message || window.webkit.messageHandlers.iosController.postMessage;
+			} catch(e) {
+				ac = false;
+			}
 			function setAndroidMainUUID(uuid) {
 				ANDROID_MAIN_UUID = uuid;
 				/* elUUID.innerHTML = "UUID: " + ANDROID_MAIN_UUID; */
@@ -27,10 +34,14 @@
 					total: 5,
 					success: 3,
 					fail: 1,
+					none: 1,
 					timeout: 1,
 				};
 				*/
 				msgPopup.innerHTML = str;
+				if(param.success + param.fail + param.none + param.timeout == param.total) {
+					if(ab) ab.message("REQUEST_END");
+				}
 			}
 
 		</script>
