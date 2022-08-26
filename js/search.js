@@ -27,10 +27,7 @@ function setPopupMessage(str) {
     console.log("setPopupMessage", param.success, param.fail, param.none, param.timeout, param.total);
     console.log(param.success + param.fail + param.none + param.timeout, param.total);
     console.log(param.success + param.fail + param.none + param.timeout == param.total);
-    if(param.success + param.fail + param.none + param.timeout == param.total) {
-        console.log("okay");
-        console.log(ac);
-        console.log(ac.message);
+    if (param.finish) { 
         if(ac) ac.message("REQUEST_END");
-    }
+    }    
 }
