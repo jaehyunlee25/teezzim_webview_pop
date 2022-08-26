@@ -21,13 +21,11 @@ function setPopupMessage(str) {
         fail: 1,
         none: 1,
         timeout: 1,
+        finish: false,
     };
     */
     msgPopup.innerHTML = str;
-    console.log("setPopupMessage", param.success, param.fail, param.none, param.timeout, param.total);
-    console.log(param.success + param.fail + param.none + param.timeout, param.total);
-    console.log(param.success + param.fail + param.none + param.timeout == param.total);
-    if (param.finish) { 
+    if (param.finish) {
         if(ac) ac.message("REQUEST_END");
     }    
 }
