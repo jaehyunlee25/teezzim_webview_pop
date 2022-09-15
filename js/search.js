@@ -13,8 +13,8 @@ function setAndroidMainUUID(uuid) {
 }
 function setPopupMessage(str) {
   console.log("str", str, typeof str);
-  msgPopup.innerHTML = str;
   const param = JSON.parse(str);
+  msgPopup.innerHTML = param.message;
   console.log(param);
   /*
     const param = {
