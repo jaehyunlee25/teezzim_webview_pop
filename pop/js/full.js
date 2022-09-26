@@ -7,8 +7,13 @@ try {
 } catch (e) {
   ac = false;
 }
-console.log(11);
-function setPopupMessage(str) {
+const param = {
+  command: "SHOW_URL_INFO",
+  param: "https://map.kakao.com/",
+};
+if (ac) ac.message(JSON.stringify(param));
+
+/* function setPopupMessage(str) {
   console.log("str", str, typeof str);
   const param = JSON.parse(str);
   msgPopup.innerHTML = param.message;
@@ -16,4 +21,4 @@ function setPopupMessage(str) {
   if (param.finish) {
     if (ac) ac.message("REQUEST_END");
   }
-}
+} */
