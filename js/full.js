@@ -7,6 +7,7 @@ try {
 } catch (e) {
   ac = false;
 }
+console.log(11);
 function setPopupMessage(str) {
   console.log("str", str, typeof str);
   const param = JSON.parse(str);
