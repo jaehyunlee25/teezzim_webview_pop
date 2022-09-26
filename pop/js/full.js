@@ -11,6 +11,7 @@ const param = {
   command: "SHOW_URL_INFO",
   param: "https://map.kakao.com/",
 };
+console.log(ac);
 if (ac) ac.message(JSON.stringify(param));
 
 /* function setPopupMessage(str) {
