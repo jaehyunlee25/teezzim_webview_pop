@@ -11,8 +11,28 @@ const param = {
   command: "SHOW_URL_INFO",
   param: "https://m.map.kakao.com/",
 };
-console.log(ac);
 if (ac) ac.message(JSON.stringify(param));
+
+const dictURL = {
+  "https://m.map.kakao.com/": () => {
+    const param = {
+      command: "SHOW_SCRIPT_INFO",
+      param: "javascript:alert('hello, kakao!!');",
+    };
+    if (ac) ac.message(JSON.stringify(param));
+  },
+};
+function webviewOnLoad(strURL) {
+  dictURL[strURL]();
+}
+
+btnBack.onclick = function () {
+  const param = {
+    command: "SHOW_URL_INFO",
+    param: "https://m.map.kakao.com/",
+  };
+  if (ac) ac.message(JSON.stringify(param));
+};
 
 /* function setPopupMessage(str) {
   console.log("str", str, typeof str);
