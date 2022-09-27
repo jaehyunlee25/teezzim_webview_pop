@@ -110,10 +110,11 @@ const locParam = (() => {
 })();
 
 const dictURL = {
-  "https://m.map.kakao.com/": () => {
+  showTrafficInfo: () => {
     const param = {
       command: "SHOW_SCRIPT_INFO",
-      param: "javascript:alert('hello, kakao!!');",
+      param:
+        'javascript:if(document.getElementsByClassName("btn_set mctr_realtraffic")[0].innerText==\'해제\') document.getElementsByClassName("btn_set mctr_realtraffic")[0].click();',
     };
     if (ac) ac.message(JSON.stringify(param));
   },
@@ -149,8 +150,8 @@ function main() {
   }
 }
 
-function webviewOnLoad(strURL) {
-  dictURL[strURL]();
+function webviewOnLoad(option) {
+  dictURL[option]();
 }
 
 btnBack.onclick = function () {
