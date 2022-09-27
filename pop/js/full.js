@@ -130,7 +130,7 @@ function main() {
       { club_id },
       { "Content-Type": "application/json" },
       (data) => {
-        const { kakao_location_id: locId } = JSON.parse(data);
+        const { kakao_location_id: locId } = JSON.parse(data)[0];
         const param = {
           command: "SHOW_URL_INFO",
           param:
