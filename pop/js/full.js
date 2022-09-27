@@ -138,6 +138,7 @@ function main() {
             locId +
             "/map/place",
         };
+        console.log(param);
         if (ac) ac.message(JSON.stringify(param));
       }
     );
