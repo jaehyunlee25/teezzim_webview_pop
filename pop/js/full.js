@@ -19,7 +19,6 @@ const locParam = (() => {
     });
   return res;
 })();
-console.log(locParam);
 
 const dictURL = {
   "https://m.map.kakao.com/": () => {
@@ -31,12 +30,26 @@ const dictURL = {
   },
 };
 
+main();
+
 function main() {
-  const param = {
-    command: "SHOW_URL_INFO",
-    param: "https://m.map.kakao.com/",
-  };
-  if (ac) ac.message(JSON.stringify(param));
+  const { club_id, opt: option } = locParam;
+  if (option == "showWeatherInfo") {
+    post(
+      "https://dev.mnemosyne.co.kr/api/crawler/getOuterInfo",
+      { club_id },
+      { "Content-Type": "application/json" },
+      (data) => {
+        console.log(data);
+        return;
+        const param = {
+          command: "SHOW_URL_INFO",
+          param: "https://m.map.kakao.com/",
+        };
+        if (ac) ac.message(JSON.stringify(param));
+      }
+    );
+  }
 }
 
 function webviewOnLoad(strURL) {
