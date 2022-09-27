@@ -7,11 +7,19 @@ try {
 } catch (e) {
   ac = false;
 }
-const param = {
-  command: "SHOW_URL_INFO",
-  param: "https://m.map.kakao.com/",
-};
-if (ac) ac.message(JSON.stringify(param));
+
+const locParam = (() => {
+  const res = {};
+  location.href
+    .split("&")[1]
+    .split("&")
+    .forEach((str) => {
+      const p = str.split("=");
+      res[p[0]] = p[1];
+    });
+  return res;
+})();
+console.log(locParam);
 
 const dictURL = {
   "https://m.map.kakao.com/": () => {
@@ -22,6 +30,15 @@ const dictURL = {
     if (ac) ac.message(JSON.stringify(param));
   },
 };
+
+function main() {
+  const param = {
+    command: "SHOW_URL_INFO",
+    param: "https://m.map.kakao.com/",
+  };
+  if (ac) ac.message(JSON.stringify(param));
+}
+
 function webviewOnLoad(strURL) {
   dictURL[strURL]();
 }
