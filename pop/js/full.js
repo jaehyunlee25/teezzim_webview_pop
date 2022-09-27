@@ -131,6 +131,7 @@ function main() {
       { "Content-Type": "application/json" },
       (data) => {
         const json = JSON.parse(data).data;
+        console.log(json);
         const { kakao_location_id: locId, name } = json[0];
         const param = {
           command: "SHOW_URL_INFO",
