@@ -111,12 +111,14 @@ const locParam = (() => {
 
 const dictURL = {
   showTrafficInfo: () => {
-    const param = {
-      command: "SHOW_SCRIPT_INFO",
-      param:
-        'javascript:(() => {console.log("test text");if(document.getElementsByClassName("btn_set mctr_realtraffic")[0].innerText=="해제") document.getElementsByClassName("btn_set mctr_realtraffic")[0].click();})();',
-    };
-    if (ac) ac.message(JSON.stringify(param));
+    get("/pop/js/getTraffic.js", {}, {}, (str) => {
+      console.log(str);
+      const param = {
+        command: "SHOW_SCRIPT_INFO",
+        param: str,
+      };
+      if (ac) ac.message(JSON.stringify(param));
+    });
   },
 };
 
