@@ -124,13 +124,12 @@ main();
 function main() {
   const { club_id, opt: option } = locParam;
 
-  if (option == "showWeatherInfo") {
+  if (option == "showTrafficInfo") {
     post(
       "https://dev.mnemosyne.co.kr/api/crawler/getOuterInfo",
       { club_id },
       { "Content-Type": "application/json" },
       (data) => {
-        console.log(data);
         const { kakao_location_id: locId } = JSON.parse(data).data[0];
         const param = {
           command: "SHOW_URL_INFO",
@@ -139,7 +138,6 @@ function main() {
             locId +
             "/map/place",
         };
-        console.log(param);
         if (ac) ac.message(JSON.stringify(param));
       }
     );
