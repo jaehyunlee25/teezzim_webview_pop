@@ -130,11 +130,13 @@ function main() {
       { club_id },
       { "Content-Type": "application/json" },
       (data) => {
-        console.log(data);
-        return;
+        const { kakao_location_id: locId } = JSON.parse(data);
         const param = {
           command: "SHOW_URL_INFO",
-          param: "https://m.map.kakao.com/",
+          param:
+            "https://m.map.kakao.com/actions/searchView#!/" +
+            locId +
+            "/map/place",
         };
         if (ac) ac.message(JSON.stringify(param));
       }
