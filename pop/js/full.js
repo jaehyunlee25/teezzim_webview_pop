@@ -11,7 +11,7 @@ try {
 const locParam = (() => {
   const res = {};
   location.href
-    .split("&")[1]
+    .split("?")[1]
     .split("&")
     .forEach((str) => {
       const p = str.split("=");
