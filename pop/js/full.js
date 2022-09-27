@@ -114,7 +114,7 @@ const dictURL = {
     const param = {
       command: "SHOW_SCRIPT_INFO",
       param:
-        'javascript:if(document.getElementsByClassName("btn_set mctr_realtraffic")[0].innerText==\'해제\') document.getElementsByClassName("btn_set mctr_realtraffic")[0].click();',
+        'javascript:if(document.getElementsByClassName("btn_set mctr_realtraffic")[0].innerText=="해제") document.getElementsByClassName("btn_set mctr_realtraffic")[0].click();',
     };
     if (ac) ac.message(JSON.stringify(param));
   },
