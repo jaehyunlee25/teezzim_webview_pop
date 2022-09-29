@@ -44,7 +44,7 @@ const dictScript = {
   showWeatherInfo: () => {
     get("/pop/js/getWeather.js", {}, {}, (str) => {
       const { weather_location_id: locId } = OuterInfo[0];
-      str.dp({ locId });
+      str = str.dp({ locId });
       const param = {
         command: "SHOW_SCRIPT_INFO",
         param: str,
