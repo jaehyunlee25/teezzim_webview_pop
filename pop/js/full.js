@@ -85,7 +85,7 @@ function main() {
 
   post(
     "https://dev.mnemosyne.co.kr/api/crawler/getOuterInfo",
-    { clubId },
+    { club_id: clubId },
     { "Content-Type": "application/json" },
     (data) => {
       console.log(data);
