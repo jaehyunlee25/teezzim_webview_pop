@@ -1,3 +1,13 @@
+String.prototype.dp = function (param) {
+  let self = this;
+  const keys = Object.keys(param);
+  keys.forEach((key) => {
+    const regex = new RegExp("\\$\\{".add(key).add("\\}"), "g");
+    const val = param[key];
+    self = self.replace(regex, val);
+  });
+  return self;
+};
 let ANDROID_MAIN_UUID;
 let ac = false;
 try {
@@ -8,6 +18,82 @@ try {
   ac = false;
 }
 
+let OuterInfo;
+const locParam = (() => {
+  const res = {};
+  location.href
+    .split("?")[1]
+    .split("&")
+    .forEach((str) => {
+      const p = str.split("=");
+      res[p[0]] = p[1];
+    });
+  return res;
+})();
+const dictScript = {
+  showTrafficInfo: () => {
+    get("/pop/js/getTraffic.js", {}, {}, (str) => {
+      console.log(str);
+      const param = {
+        command: "SHOW_SCRIPT_INFO",
+        param: str,
+      };
+      if (ac) ac.message(JSON.stringify(param));
+    });
+  },
+  showWeatherInfo: () => {
+    get("/pop/js/getWeather.js", {}, {}, (str) => {
+      const { weather_location_id: locId } = OuterInfo[0];
+      str.dp({ locId });
+      const param = {
+        command: "SHOW_SCRIPT_INFO",
+        param: str,
+      };
+      if (ac) ac.message(JSON.stringify(param));
+    });
+  },
+};
+const dictUrl = {
+  showTrafficInfo: () => {
+    const { kakao_location_id: locId, name } = OuterInfo[0];
+    const param = {
+      command: "SHOW_URL_INFO",
+      param:
+        "https://m.map.kakao.com/actions/searchView?q=" +
+        name +
+        "#!/" +
+        locId +
+        "/map/place",
+    };
+    if (ac) ac.message(JSON.stringify(param));
+  },
+  showWeatherInfo: () => {
+    const param = {
+      command: "SHOW_URL_INFO",
+      param: "https://www.weather.go.kr/w/index.do",
+    };
+    if (ac) ac.message(JSON.stringify(param));
+  },
+};
+
+main();
+
+function main() {
+  const { club_id: clubId, opt: option } = locParam;
+
+  post(
+    "https://dev.mnemosyne.co.kr/api/crawler/getOuterInfo",
+    { clubId },
+    { "Content-Type": "application/json" },
+    (data) => {
+      OuterInfo = JSON.parse(data).data;
+      dictUrl[option]();
+    }
+  );
+}
+function webviewOnLoad(option) {
+  dictScript[option]();
+}
 function post(addr, param, header, callback) {
   var a = new ajaxcallforgeneral(),
     str = [];
@@ -97,72 +183,7 @@ function ajaxcallforgeneral() {
     }
   }
 }
-const locParam = (() => {
-  const res = {};
-  location.href
-    .split("?")[1]
-    .split("&")
-    .forEach((str) => {
-      const p = str.split("=");
-      res[p[0]] = p[1];
-    });
-  return res;
-})();
-
-const dictURL = {
-  showTrafficInfo: () => {
-    get("/pop/js/getTraffic.js", {}, {}, (str) => {
-      console.log(str);
-      const param = {
-        command: "SHOW_SCRIPT_INFO",
-        param: str,
-      };
-      if (ac) ac.message(JSON.stringify(param));
-    });
-  },
-};
-
-main();
-
-function main() {
-  const { club_id, opt: option } = locParam;
-
-  if (option == "showTrafficInfo") {
-    post(
-      "https://dev.mnemosyne.co.kr/api/crawler/getOuterInfo",
-      { club_id },
-      { "Content-Type": "application/json" },
-      (data) => {
-        const json = JSON.parse(data).data;
-        console.log(json);
-        const { kakao_location_id: locId, name } = json[0];
-        const param = {
-          command: "SHOW_URL_INFO",
-          param:
-            "https://m.map.kakao.com/actions/searchView?q=" +
-            name +
-            "#!/" +
-            locId +
-            "/map/place",
-        };
-        console.log(param);
-        if (ac) ac.message(JSON.stringify(param));
-      }
-    );
-  }
-}
-
-function webviewOnLoad(option) {
-  dictURL[option]();
-}
-
-btnBack.onclick = function () {
-  const param = {
-    command: "SHOW_URL_INFO",
-    param: "https://m.map.kakao.com/",
-  };
-  if (ac) ac.message(JSON.stringify(param));
-};
+btnBack.onclick = function () {};
 
 /* function setPopupMessage(str) {
   console.log("str", str, typeof str);
