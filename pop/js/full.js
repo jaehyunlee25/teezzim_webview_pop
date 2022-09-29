@@ -79,7 +79,9 @@ const dictUrl = {
 main();
 
 function main() {
+  console.log(locParam);
   const { club_id: clubId, opt: option } = locParam;
+  console.log(clubId, option);
 
   post(
     "https://dev.mnemosyne.co.kr/api/crawler/getOuterInfo",
