@@ -8,6 +8,9 @@ String.prototype.dp = function (param) {
   });
   return self;
 };
+String.prototype.add = function add(str) {
+  return [this, str].join("");
+};
 let ANDROID_MAIN_UUID;
 let ac = false;
 try {
