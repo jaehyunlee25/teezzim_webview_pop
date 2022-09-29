@@ -86,7 +86,9 @@ function main() {
     { clubId },
     { "Content-Type": "application/json" },
     (data) => {
+      console.log(data);
       OuterInfo = JSON.parse(data).data;
+      console.log(OuterInfo);
       dictUrl[option]();
     }
   );
