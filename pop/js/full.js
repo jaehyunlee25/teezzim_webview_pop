@@ -77,6 +77,17 @@ const dictUrl = {
     };
     if (ac) ac.message(JSON.stringify(param));
   },
+  showNearbyRestaurantInfo: () => {
+    const { name } = OuterInfo[0];
+    const param = {
+      command: "SHOW_URL_INFO",
+      param:
+        "https://m.search.naver.com/search.naver?sm=mtp_sly.hst&where=m&query=" +
+        (name + "+맛집") +
+        "&acr=1",
+    };
+    if (ac) ac.message(JSON.stringify(param));
+  },
 };
 
 main();
@@ -94,12 +105,12 @@ function main() {
       console.log(data);
       OuterInfo = JSON.parse(data).data;
       console.log(OuterInfo);
-      dictUrl[option]();
+      if (dictUrl[option]) dictUrl[option]();
     }
   );
 }
 function webviewOnLoad(option) {
-  dictScript[option]();
+  if (dictScript[option]) dictScript[option]();
 }
 function post(addr, param, header, callback) {
   var a = new ajaxcallforgeneral(),
