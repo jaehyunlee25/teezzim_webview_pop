@@ -201,7 +201,12 @@ function ajaxcallforgeneral() {
     }
   }
 }
-btnBack.onclick = function () {};
+btnBack.onclick = function () {
+  if (ac) ac.message("REQUEST_END");
+};
+btnClose.onclick = function () {
+  if (ac) ac.message("REQUEST_END");
+};
 
 /* function setPopupMessage(str) {
   console.log("str", str, typeof str);
