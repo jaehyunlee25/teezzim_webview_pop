@@ -2,12 +2,12 @@ javascript: (() => {
   /* const el = document.getElementsByClassName("btn_set mctr_realtraffic");
   if (el[0].innerText != "선택") el[0].click(); */
   location.href = getAddr({
-    startLoc: departArriveForm.startLoc.value,
+    /* startLoc: departArriveForm.startLoc.value,
     sxEnc: departArriveForm.sxEnc.value,
-    syEnc: departArriveForm.syEnc.value,
-    /* startLoc: "서울 영등포구 여의도동 8-1",
+    syEnc: departArriveForm.syEnc.value, */
+    startLoc: "서울 영등포구 여의도동 8-1",
     sxEnc: "LWMNTTHWNXRSPQLOLM",
-    syEnc: "QNOTTSLIYOOMSSNMQ", */
+    syEnc: "QNOTTSLIYOOMSSNMQ",
     endLoc: "${endLoc}",
     exEnc: "${exEnc}",
     eyEnc: "${eyEnc}",
