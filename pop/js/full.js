@@ -36,6 +36,13 @@ const locParam = (() => {
 const dictScript = {
   showTrafficInfo: () => {
     get("/pop/js/getTraffic.js", {}, {}, (str) => {
+      const {
+        kakao_endLoc: endLoc,
+        kakao_exEnc: exEnc,
+        kakao_eyEnc: eyEnc,
+        kakao_ids: ids,
+      } = OuterInfo[0];
+      str = str.dp({ endLoc, exEnc, eyEnc, ids });
       console.log(str);
       const param = {
         command: "SHOW_SCRIPT_INFO",
@@ -61,12 +68,7 @@ const dictUrl = {
     const { kakao_location_id: locId, name } = OuterInfo[0];
     const param = {
       command: "SHOW_URL_INFO",
-      param:
-        "https://m.map.kakao.com/actions/searchView?q=" +
-        name +
-        "#!/" +
-        locId +
-        "/map/place",
+      param: "https://m.map.kakao.com/actions/routeView",
     };
     if (ac) ac.message(JSON.stringify(param));
   },
