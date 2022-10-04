@@ -79,7 +79,7 @@ const dictUrl = {
   },
   showNearbyRestaurantInfo: () => {
     let { name } = OuterInfo[0];
-    if (name.indexOf("CC") != -1 && name.indexOf("cc") == -1) name += "CC";
+    if (name.indexOf("CC") == -1 && name.indexOf("cc") == -1) name += "CC";
     const param = {
       command: "SHOW_URL_INFO",
       param:
