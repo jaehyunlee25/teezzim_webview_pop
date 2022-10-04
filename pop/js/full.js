@@ -112,8 +112,13 @@ function main() {
     }
   );
 }
+let flg = true;
 function webviewOnLoad(option) {
-  if (dictScript[option]) dictScript[option]();
+  if (!flg) return;
+  if (dictScript[option]) {
+    dictScript[option]();
+    flg = false;
+  }
 }
 function post(addr, param, header, callback) {
   var a = new ajaxcallforgeneral(),
