@@ -2,7 +2,10 @@ javascript: (() => {
   /* const el = document.getElementsByClassName("btn_set mctr_realtraffic");
   if (el[0].innerText != "선택") el[0].click(); */
   let cnt = 0;
-  const t = setInterval(() => {
+  if (departArriveForm.startLoc.value == "") return;
+  location.href = "https://m.map.kakao.com/";
+
+  /* const t = setInterval(() => {
     cnt++;
     console.log("stand by", cnt);
     if (cnt > 200) {
@@ -24,16 +27,13 @@ javascript: (() => {
       startLoc: departArriveForm.startLoc.value,
       sxEnc: departArriveForm.sxEnc.value,
       syEnc: departArriveForm.syEnc.value,
-      /* startLoc: "서울 영등포구 여의도동 8-1",
-      sxEnc: "LWMNTTHWNXRSPQLOLM",
-      syEnc: "QNOTTSLIYOOMSSNMQ", */
       endLoc: "${endLoc}",
       exEnc: "${exEnc}",
       eyEnc: "${eyEnc}",
       ids: "${ids}",
       service: "",
     });
-  }, 200);
+  }, 200); */
 
   /*
   location.href = getAddr({
