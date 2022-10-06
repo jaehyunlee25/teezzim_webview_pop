@@ -5,7 +5,7 @@ javascript: (() => {
   const t = setInterval(() => {
     cnt++;
     console.log("stand by", cnt);
-    if (cnt > 20) {
+    if (cnt > 200) {
       clearInterval(t);
       let ac = false;
       try {
