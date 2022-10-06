@@ -2,8 +2,8 @@ javascript: (() => {
   /* const el = document.getElementsByClassName("btn_set mctr_realtraffic");
   if (el[0].innerText != "선택") el[0].click(); */
   let cnt = 0;
-  if (departArriveForm.startLoc.value == "") return;
-  location.href = "https://m.map.kakao.com/";
+  if (departArriveForm.startLoc.value == "")
+    location.href = "https://m.map.kakao.com/";
 
   /* const t = setInterval(() => {
     cnt++;
