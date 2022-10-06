@@ -30,7 +30,7 @@ javascript: (() => {
   function getAddr(obj) {
     console.log("parameter");
     Object.keys(obj).forEach((key) => {
-      console.log(key, obj[key]);
+      console.log(key, obj[key], typeof obj[key]);
     });
     const header = "https://m.map.kakao.com/actions/carRoute?";
     const res = [];
