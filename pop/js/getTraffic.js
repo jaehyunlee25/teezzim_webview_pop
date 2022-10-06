@@ -29,7 +29,9 @@ javascript: (() => {
   */
   function getAddr(obj) {
     console.log("parameter");
-    console.log(obj);
+    Object.keys(obj).forEach((key) => {
+      console.log(key, obj[key]);
+    });
     const header = "https://m.map.kakao.com/actions/carRoute?";
     const res = [];
     Object.keys(obj).forEach((key) => {
