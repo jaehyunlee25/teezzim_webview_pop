@@ -18,7 +18,22 @@ javascript: (() => {
     };
     if (ac) ac.message(JSON.stringify(param));
   } else {
-    location.href = getAddr({
+    const param = {
+      command: "SHOW_URL_INFO",
+      param: getAddr({
+        startLoc: departArriveForm.startLoc.value,
+        sxEnc: departArriveForm.sxEnc.value,
+        syEnc: departArriveForm.syEnc.value,
+        endLoc: "${endLoc}",
+        exEnc: "${exEnc}",
+        eyEnc: "${eyEnc}",
+        ids: "${ids}",
+        service: "",
+      }),
+      option: "",
+    };
+    if (ac) ac.message(JSON.stringify(param));
+    /* location.href = getAddr({
       startLoc: departArriveForm.startLoc.value,
       sxEnc: departArriveForm.sxEnc.value,
       syEnc: departArriveForm.syEnc.value,
@@ -27,7 +42,7 @@ javascript: (() => {
       eyEnc: "${eyEnc}",
       ids: "${ids}",
       service: "",
-    });
+    }); */
   }
 
   /* const t = setInterval(() => {

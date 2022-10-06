@@ -136,6 +136,7 @@ function main() {
 function webviewOnLoad(option) {
   //if (!flg) return;
   console.log("option", option);
+  if (option == "") return;
   if (dictScript[option]) {
     dictScript[option]();
     flg = false;
