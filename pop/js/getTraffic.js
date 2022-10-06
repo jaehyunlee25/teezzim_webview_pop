@@ -14,6 +14,7 @@ javascript: (() => {
     ids: "${ids}",
     service: "",
   });
+
   /*
   location.href = getAddr({
     startLoc: "서울 영등포구 여의도동 8-1",
@@ -27,6 +28,7 @@ javascript: (() => {
   });
   */
   function getAddr(obj) {
+    console.log(obj);
     const header = "https://m.map.kakao.com/actions/carRoute?";
     const res = [];
     Object.keys(obj).forEach((key) => {
