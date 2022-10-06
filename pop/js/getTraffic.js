@@ -28,6 +28,7 @@ javascript: (() => {
   });
   */
   function getAddr(obj) {
+    console.log("parameter");
     console.log(obj);
     const header = "https://m.map.kakao.com/actions/carRoute?";
     const res = [];
