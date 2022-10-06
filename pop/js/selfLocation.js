@@ -9,27 +9,14 @@ javascript: (() => {
   } catch (e) {
     ac = false;
   }
-  let cnt = 0;
-  if (departArriveForm.startLoc.value == "") {
+  setTimeout(() => {
     const param = {
       command: "SHOW_URL_INFO",
-      param: "https://m.map.kakao.com/",
-      option: "whenSelfLocation",
+      param: "https://m.map.kakao.com/actions/routeView",
+      option: "showTrafficInfo",
     };
     if (ac) ac.message(JSON.stringify(param));
-  } else {
-    location.href = getAddr({
-      startLoc: departArriveForm.startLoc.value,
-      sxEnc: departArriveForm.sxEnc.value,
-      syEnc: departArriveForm.syEnc.value,
-      endLoc: "${endLoc}",
-      exEnc: "${exEnc}",
-      eyEnc: "${eyEnc}",
-      ids: "${ids}",
-      service: "",
-    });
-  }
-
+  }, 3000);
   /* const t = setInterval(() => {
     cnt++;
     console.log("stand by", cnt);

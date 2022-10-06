@@ -62,6 +62,23 @@ const dictScript = {
       if (ac) ac.message(JSON.stringify(param));
     });
   },
+  whenSelfLocation: () => {
+    get("/pop/js/selfLocation.js", {}, {}, (str) => {
+      const {
+        kakao_endLoc: endLoc,
+        kakao_exEnc: exEnc,
+        kakao_eyEnc: eyEnc,
+        kakao_ids: ids,
+      } = OuterInfo[0];
+      str = str.dp({ endLoc, exEnc, eyEnc, ids });
+      console.log(str);
+      const param = {
+        command: "SHOW_SCRIPT_INFO",
+        param: str,
+      };
+      if (ac) ac.message(JSON.stringify(param));
+    });
+  },
 };
 const dictUrl = {
   showTrafficInfo: () => {
@@ -69,6 +86,7 @@ const dictUrl = {
     const param = {
       command: "SHOW_URL_INFO",
       param: "https://m.map.kakao.com/actions/routeView",
+      option: "showTrafficInfo",
     };
     if (ac) ac.message(JSON.stringify(param));
   },
@@ -76,6 +94,7 @@ const dictUrl = {
     const param = {
       command: "SHOW_URL_INFO",
       param: "https://www.weather.go.kr/w/index.do",
+      option: "showWeatherInfo",
     };
     if (ac) ac.message(JSON.stringify(param));
   },
@@ -88,6 +107,7 @@ const dictUrl = {
         "https://m.search.naver.com/search.naver?sm=mtp_sly.hst&where=m&query=" +
         (name + "+맛집") +
         "&acr=1",
+      option: "showNearbyRestaurantInfo",
     };
     if (ac) ac.message(JSON.stringify(param));
   },
@@ -112,9 +132,9 @@ function main() {
     }
   );
 }
-let flg = true;
+//let flg = true;
 function webviewOnLoad(option) {
-  if (!flg) return;
+  //if (!flg) return;
   if (dictScript[option]) {
     dictScript[option]();
     flg = false;
