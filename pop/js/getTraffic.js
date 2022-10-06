@@ -1,7 +1,23 @@
 javascript: (() => {
   /* const el = document.getElementsByClassName("btn_set mctr_realtraffic");
   if (el[0].innerText != "선택") el[0].click(); */
+  let cnt = 0;
   const t = setInterval(() => {
+    cnt++;
+    console.log("stand by", cnt);
+    if (cnt > 20) {
+      clearInterval(t);
+      let ac = false;
+      try {
+        ac =
+          window.AndroidBridge || window.webkit.messageHandlers.iosController;
+        ac.message =
+          ac.message || window.webkit.messageHandlers.iosController.postMessage;
+      } catch (e) {
+        ac = false;
+      }
+      if (ac) ac.message("REQUEST_END");
+    }
     if (departArriveForm.startLoc.value == "") return;
     clearInterval(t);
     location.href = getAddr({
