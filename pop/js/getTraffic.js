@@ -4,6 +4,17 @@ javascript: (() => {
   let cnt = 0;
   if (departArriveForm.startLoc.value == "")
     location.href = "https://m.map.kakao.com/";
+  else
+    location.href = getAddr({
+      startLoc: departArriveForm.startLoc.value,
+      sxEnc: departArriveForm.sxEnc.value,
+      syEnc: departArriveForm.syEnc.value,
+      endLoc: "${endLoc}",
+      exEnc: "${exEnc}",
+      eyEnc: "${eyEnc}",
+      ids: "${ids}",
+      service: "",
+    });
 
   /* const t = setInterval(() => {
     cnt++;
