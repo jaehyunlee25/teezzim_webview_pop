@@ -15,6 +15,13 @@ function setPopupMessage(str) {
   console.log("str", str, typeof str);
   const param = JSON.parse(str);
   msgPopup.innerHTML = param.message;
+  if (param.opt == "date") {
+    imgPop.src = "publish/images/main/date.gif";
+  } else if (param.opt == "time") {
+    imgPop.src = "publish/images/main/time.gif";
+  } else {
+    imgPop.src = "publish/images/main/info.gif";
+  }
   console.log(param);
   /*
     const param = {
