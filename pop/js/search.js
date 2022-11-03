@@ -16,11 +16,11 @@ function setPopupMessage(str) {
   const param = JSON.parse(str);
   msgPopup.innerHTML = param.message;
   if (param.opt == "date") {
-    imgPop.src = "publish/images/main/date.gif";
+    imgPop.src = "publish/images/main/date.png";
   } else if (param.opt == "time") {
-    imgPop.src = "publish/images/main/time.gif";
+    imgPop.src = "publish/images/main/time.png";
   } else {
-    imgPop.src = "publish/images/main/info.gif";
+    imgPop.src = "publish/images/main/info.png";
   }
   console.log(param);
   /*
