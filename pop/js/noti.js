@@ -1,6 +1,3 @@
-const start = new Date().getTime();
-console.log(start);
-
 let ANDROID_MAIN_UUID;
 let ac = false;
 try {
@@ -15,8 +12,6 @@ function setAndroidMainUUID(uuid) {
   /* elUUID.innerHTML = "UUID: " + ANDROID_MAIN_UUID; */
 }
 function setPopupMessage(str) {
-  const end = new Date().getTime();
-  console.log("time", end - start);
   console.log("str", str, typeof str);
   const param = JSON.parse(str);
   msgTitle.innerHTML = param.title;
