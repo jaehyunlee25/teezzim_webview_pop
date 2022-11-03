@@ -22,6 +22,9 @@ function setPopupMessage(str) {
   } else {
     imgPop.src = "publish/images/main/info.png";
   }
+  imgPop.onload = function () {
+    this.style.display = "inline-block";
+  };
   console.log(param);
   /*
     const param = {
