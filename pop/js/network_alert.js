@@ -12,3 +12,6 @@ function setAndroidMainUUID(uuid) {
   /* elUUID.innerHTML = "UUID: " + ANDROID_MAIN_UUID; */
 }
 function setPopupMessage(str) {}
+imgPop.onclick = function () {
+  if (ac) ac.message("REQUEST_END");
+};
