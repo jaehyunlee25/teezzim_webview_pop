@@ -13,7 +13,13 @@ function setAndroidMainUUID(uuid) {
 }
 function setPopupMessage(str) {}
 imgPop.onclick = function () {
-  if (ac) ac.message("REQUEST_END");
+  if (ac)
+    ac.message(
+      JSON.stringify({
+        type: "REQUEST_END",
+        check: !!elNotAgain.check,
+      })
+    );
 };
 elNotAgain.onclick = function () {
   if (this.check == undefined) this.check = false;
