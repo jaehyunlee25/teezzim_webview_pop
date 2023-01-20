@@ -23,7 +23,7 @@ imgPop.onclick = function () {
         })
       );
     } else {
-      ac.message("REQUEST_END");
+      ac.smessage("REQUEST_END");
     }
   }
 };
