@@ -15,3 +15,13 @@ function setPopupMessage(str) {}
 imgPop.onclick = function () {
   if (ac) ac.message("REQUEST_END");
 };
+elNotAgain.onclick = function () {
+  if (this.check == undefined) this.check = false;
+  if (this.check) {
+    this.check = false;
+    this.src = "publish/images/main/check_off.png";
+  } else {
+    this.check = true;
+    this.src = "publish/images/main/check_on.png";
+  }
+};
