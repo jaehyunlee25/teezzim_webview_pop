@@ -1,5 +1,6 @@
 let ANDROID_MAIN_UUID;
 let ac = false;
+const log = console.log;
 try {
   ac = window.AndroidBridge || window.webkit.messageHandlers.iosController;
   ac.message =
