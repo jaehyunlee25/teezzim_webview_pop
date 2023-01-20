@@ -14,11 +14,8 @@ function setAndroidMainUUID(uuid) {
 }
 function setPopupMessage(str) {}
 imgPop.onclick = function () {
-  log(1);
   if (ac) {
-    log(2);
     if (window.AndroidBridge) {
-      log(4);
       ac.message(
         JSON.stringify({
           type: "REQUEST_END",
@@ -26,7 +23,6 @@ imgPop.onclick = function () {
         })
       );
     } else {
-      log(3);
       ac.message("REQUEST_END");
     }
   }
