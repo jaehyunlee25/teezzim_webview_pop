@@ -17,7 +17,7 @@ imgPop.onclick = function () {
   log(1);
   if (ac) {
     log(2);
-    if (window.webkit.messageHandlers.iosController) {
+    if (window.webkit.messageHandlers) {
       log(3);
       ac.message("REQUEST_END");
     }
