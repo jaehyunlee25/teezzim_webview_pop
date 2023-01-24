@@ -15,7 +15,13 @@ function setAndroidMainUUID(uuid) {
 function setPopupMessage(str) {}
 imgPop.onclick = function () {
   if (ac) {
-    if (window.AndroidBridge) {
+    ac.message(
+      JSON.stringify({
+        type: "REQUEST_END",
+        check: !!elNotAgain.check,
+      })
+    );
+    /* if (window.AndroidBridge) {
       ac.message(
         JSON.stringify({
           type: "REQUEST_END",
@@ -24,7 +30,7 @@ imgPop.onclick = function () {
       );
     } else {
       ac.message("REQUEST_END");
-    }
+    } */
   }
 };
 elNotAgain.onclick = function () {
